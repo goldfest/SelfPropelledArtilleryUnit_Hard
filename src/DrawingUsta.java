@@ -1,6 +1,6 @@
 import java.awt.*;
-import java.awt.geom.Path2D;
 import java.awt.geom.Arc2D;
+import java.awt.geom.Path2D;
 import java.util.Random;
 
 public class DrawingUsta {
@@ -62,6 +62,21 @@ public class DrawingUsta {
         _ustaHeight = ustaHeight;
     }
 
+    protected DrawingUsta(EntityUsta entityUsta, IDrawingWheels iDrawingWheels,
+                                int width, int height){
+        EntityUsta = entityUsta;
+        _drawingWheels  = iDrawingWheels;
+        _pictureWidth = width;
+        _pictureHeight = height;
+    }
+
+    protected DrawingUsta(EntityUsta entityUsta, IDrawingWheels iDrawingWheels,
+                                int width, int height, int ustaWidth, int  ustaHeight){
+        this(entityUsta, iDrawingWheels, width, height);
+        _ustaWidth = ustaWidth;
+        _ustaHeight = ustaHeight;
+    }
+
 
     public void SetPosition(int x, int y)
     {
@@ -103,6 +118,9 @@ public class DrawingUsta {
         if (EntityUsta == null) {
             return;
         }
+
+
+
         Color bodyColor = EntityUsta.BodyColor;
 
         Color blackBrush = Color.BLACK;
@@ -128,7 +146,6 @@ public class DrawingUsta {
         g.draw(path);
 
         _drawingWheels.DrawWheels(g, blackBrush, _startPosX, _startPosY, 9,9);
-
         g.setColor(bodyColor);
         g.fillRect(_startPosX + 45, _startPosY + 20, 40, 20);
         g.setColor(Color.BLACK);
@@ -163,5 +180,9 @@ public class DrawingUsta {
                 break;
         }
         return false;
+    }
+
+    public IMoveableObject GetMoveableObject() {
+        return new DrawingObjectUsta(this);
     }
 }

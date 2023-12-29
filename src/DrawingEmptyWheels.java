@@ -10,7 +10,7 @@ public class DrawingEmptyWheels implements  IDrawingWheels{
                 return;
             }
         }
-        this._wheelsCount = WheelsCount.Five;
+        this._wheelsCount = WheelsCount.Four;
     }
 
     @Override

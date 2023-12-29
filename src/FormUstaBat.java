@@ -16,6 +16,10 @@ public class FormUstaBat {
     public JComboBox comboBoxStrategy;
     private JButton buttonStep;
     private JButton buttonCreateUsta;
+    public JButton ButtonSelectUsta;
+    public DrawingUsta SelectedUsta;
+    public boolean IsSelect = false;
+
     public JPanel getPictureBox() {
         return pictureBox;
     }
@@ -28,25 +32,27 @@ public class FormUstaBat {
 
         buttonCreateUsta.addActionListener(e -> {
             Random rnd = new Random();
-
+            Color color = JColorChooser.showDialog(null, "Цвет", null);
             _drawingUsta = new DrawingUsta(rnd.nextInt(100, 300),
-                    rnd.nextInt(1000, 3000), new Color(rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256)),
+                    rnd.nextInt(1000, 3000), color,
                     pictureBox.getWidth(),
                     pictureBox.getHeight());
 
-            _drawingUsta.SetWheelsCount(rnd.nextInt(4, 7));
+            _drawingUsta.SetWheelsCount(rnd.nextInt(3, 7));
             _drawingUsta.SetPosition(rnd.nextInt(10, 100), rnd.nextInt(10, 100));
             Draw();
         });
 
         buttonCreateUstaBat.addActionListener(e -> {
             Random random = new Random();
+            Color color = JColorChooser.showDialog(null, "Цвет", null);
+            Color addColor = JColorChooser.showDialog(null, "Цвет2", null);
 
             _drawingUsta = new DrawingUstaBat(
                     random.nextInt(100, 300),
                     random.nextInt(1000, 3000),
-                    new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256)),
-                    new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256)),
+                    color,
+                    addColor,
                     random.nextBoolean(),
                     random.nextBoolean(),
                     pictureBox.getWidth(),
@@ -56,6 +62,12 @@ public class FormUstaBat {
             _drawingUsta.SetWheelsCount(random.nextInt(2, 5));
             _drawingUsta.SetPosition(random.nextInt(10, 100), random.nextInt(10, 100));
             Draw();
+        });
+
+        ButtonSelectUsta.addActionListener(e->{
+            SelectedUsta = _drawingUsta;
+            IsSelect = true;
+//            DialogResult = DialogResult.OK;
         });
 
         buttonStep.addActionListener(new ActionListener() {

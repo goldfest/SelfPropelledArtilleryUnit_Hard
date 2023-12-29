@@ -1,6 +1,4 @@
 import java.awt.*;
-import java.awt.geom.Arc2D;
-import java.awt.geom.Path2D;
 
 public interface IDrawingWheels {
      void SetWheelsCount(int wheelsCount);
@@ -56,7 +54,7 @@ public interface IDrawingWheels {
                g.fillOval(startPosX + 120, startPosY + 50, 25, 24);
           }
 
-          if (wheelsCount.count == wheelsCount.Six.count) {
+          if (wheelsCount.count >= wheelsCount.Six.count) {
 
 
                /* наверху гусеницы*/

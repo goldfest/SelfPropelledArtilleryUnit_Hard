@@ -10,7 +10,7 @@ public class DrawingWheelsBlueCrom implements IDrawingWheels{
                 return;
             }
         }
-        this._wheelsCount = WheelsCount.Five;
+        this._wheelsCount = WheelsCount.Six;
     }
 
     @Override

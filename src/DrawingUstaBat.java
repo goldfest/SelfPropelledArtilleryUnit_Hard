@@ -11,6 +11,12 @@ public class DrawingUstaBat extends DrawingUsta {
             EntityUsta = new EntityUstaBat(speed, width, bodyColor, additionalColor, pushka, bodyKit);
         }
     }
+
+    public DrawingUstaBat(EntityUstaBat entityUstaBat, IDrawingWheels iDrawingWheels,
+                                     int width, int height)
+    {
+        super(entityUstaBat,iDrawingWheels, width, height, 150, 50);
+    }
     @Override
     public void DrawTransport(Graphics2D g)
     {

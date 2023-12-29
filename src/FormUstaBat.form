@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="FormUstaBat">
-  <grid id="27dc6" binding="pictureBox" layout-manager="GridLayoutManager" row-count="5" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="pictureBox" layout-manager="GridLayoutManager" row-count="6" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="24" y="37" width="736" height="499"/>
@@ -15,12 +15,12 @@
     <children>
       <vspacer id="17764">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
       <component id="6cb47" class="javax.swing.JButton" binding="buttonCreateUstaBat">
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Создать вооруженную арт. установку"/>
@@ -28,7 +28,7 @@
       </component>
       <component id="ca377" class="javax.swing.JButton" binding="buttonCreateUsta">
         <constraints>
-          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Создать арт. установку"/>
@@ -56,7 +56,7 @@
       </component>
       <component id="cc460" class="javax.swing.JButton" binding="buttonRight">
         <constraints>
-          <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="5" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="30" height="30"/>
             <preferred-size width="30" height="30"/>
             <maximum-size width="30" height="30"/>
@@ -70,7 +70,7 @@
       </component>
       <component id="2fa92" class="javax.swing.JButton" binding="buttonDown">
         <constraints>
-          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="30" height="30"/>
             <preferred-size width="30" height="30"/>
             <maximum-size width="30" height="30"/>
@@ -84,7 +84,7 @@
       </component>
       <component id="bbbb" class="javax.swing.JButton" binding="buttonUp">
         <constraints>
-          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="30" height="30"/>
             <preferred-size width="30" height="30"/>
             <maximum-size width="30" height="30"/>
@@ -102,7 +102,7 @@
       </component>
       <component id="326c5" class="javax.swing.JButton" binding="buttonLeft">
         <constraints>
-          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="30" height="30"/>
             <preferred-size width="30" height="30"/>
             <maximum-size width="30" height="30"/>
@@ -116,6 +116,14 @@
         <clientProperties>
           <hideActionText class="java.lang.Boolean" value="false"/>
         </clientProperties>
+      </component>
+      <component id="7aad1" class="javax.swing.JButton" binding="ButtonSelectUsta">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Выбрать арт. уст."/>
+        </properties>
       </component>
     </children>
   </grid>

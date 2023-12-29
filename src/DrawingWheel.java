@@ -1,6 +1,4 @@
 import java.awt.*;
-import java.awt.geom.Arc2D;
-import java.awt.geom.Path2D;
 
 public class DrawingWheel implements IDrawingWheels {
     private WheelsCount _wheelsCount;
@@ -11,7 +9,7 @@ public class DrawingWheel implements IDrawingWheels {
                 return;
             }
         }
-        this._wheelsCount = WheelsCount.Five;
+        this._wheelsCount = WheelsCount.Six;
     }
 
     @Override
