@@ -36,17 +36,17 @@ public class FormDopClassParameters {
 
     public void AddEntityUsta() {
         rnd = new Random();
-        EntityUsta entityLocomotive;
+        EntityUsta entityUsta;
         Color color = new Color(rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
         Color color2 = new Color(rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
         if (rnd.nextBoolean()) {
-            entityLocomotive = new EntityUsta(
+            entityUsta = new EntityUsta(
                     rnd.nextInt(100, 300),
                     rnd.nextInt(1000, 3000),
                     color
             );
         } else {
-            entityLocomotive = new EntityUstaBat(
+            entityUsta = new EntityUstaBat(
                     rnd.nextInt(100, 300),
                     rnd.nextInt(1000, 3000),
                     color,
@@ -55,7 +55,7 @@ public class FormDopClassParameters {
                     rnd.nextBoolean()
             );
         }
-        _dopClassParameters.Add(entityLocomotive);
+        _dopClassParameters.Add(entityUsta);
     }
 
     public void AddRandomWheels() {

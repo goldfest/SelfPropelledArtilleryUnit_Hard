@@ -2,10 +2,8 @@ import java.awt.*;
 
 public class UstaGenericCollection<T extends DrawingUsta,U extends IMoveableObject>
 {
-    //ширина/высота окна
     private final int _pictureWidth;
     private final int _pictureHeight;
-    //ширина/высота занимаемого места
     private final int _placeSizeWidth = 210;
     private final int _placeSizeHeight = 90;
 
@@ -14,8 +12,6 @@ public class UstaGenericCollection<T extends DrawingUsta,U extends IMoveableObje
 
     public UstaGenericCollection(int picWidth, int picHeight)
     {
-        //  немного странная логика, что-то я пока ее не особо понимаю, зачем нам ААААА дошло...
-        //  высчитываем размер массива для setgeneric
         int width = picWidth / _placeSizeWidth;
         int height = picHeight / _placeSizeHeight;
         _pictureWidth = picWidth;
@@ -23,18 +19,21 @@ public class UstaGenericCollection<T extends DrawingUsta,U extends IMoveableObje
         _collection = new SetGeneric<T>(width*height);
     }
 
-    /// Перегрузка оператора сложения
-    //да емае, почему в яве все по-другому?...
-
-    public int AddOverload(T loco){
-        if(loco == null){
+    public int AddOverload(T usta){
+        if(usta == null){
             return -1;
         }
-        return _collection.Insert(loco);
+        return _collection.Insert(usta);
     }
 
     public T SubOverload(int pos){
-        return _collection.Remove(pos);
+
+        T usta = _collection.Get(pos);
+        if (usta != null)
+        {
+            _collection.Remove(pos);
+        }
+        return usta;
     }
 
     // получение объекта imoveableObj

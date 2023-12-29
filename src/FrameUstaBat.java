@@ -5,7 +5,7 @@ public class FrameUstaBat extends JFrame {
     public FrameUstaBat() {
         super();
         setTitle("UstaBat");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         _formUstaCollection = new FormUstaBat();
         setContentPane(_formUstaCollection.getPictureBox());
         setDefaultLookAndFeelDecorated(false);

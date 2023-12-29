@@ -1,61 +1,67 @@
+import java.util.ArrayList;
+
 public class SetGeneric<T extends DrawingUsta>{
-    private T[] _places;
-    public int Count(){
-       return  _places.length;
-    }
-    public SetGeneric(int count) {
-        _places = (T[]) new DrawingUsta[count];
-    }
+    private ArrayList<T> _places;
 
-    public int Insert(T loco)
+    public int Count()
     {
-        return Insert(loco, 0);
+        return  _places.size();
     }
 
-    public int Insert(T loco, int position)
-    {
-        int NoEmpty = 0, temp = 0;
-        for (int i = position; i < Count(); i++)
-        {
-            if (_places[i] != null) NoEmpty++;
-        }
-        if (NoEmpty == Count() - position - 1) return -1;
+    public int maxCount;
 
-        if (position < Count() && position >= 0)
+    public SetGeneric(int count)
+    {
+        maxCount = count;
+        _places = new ArrayList<>(count);
+    }
+
+    public int Insert(T usta)
+    {
+        return Insert(usta, 0);
+    }
+
+    public int Insert(T usta, int position)
+    {
+        if(position < 0 || position > maxCount)
+            return -1;
+        else
         {
-            for (int j = position; j < Count(); j++)
-            {
-                if (_places[j] == null)
-                {
-                    temp = j;
-                    break;
-                }
-            }
-            // shift right
-            for (int i = temp; i > position; i--)
-            {
-                _places[i] = _places[i - 1];
-            }
-            _places[position] = loco;
+            _places.add(position, usta);
             return position;
         }
-        return -1;
     }
 
     public T Remove(int position)
     {
         if (position >= Count() || position < 0)
             return null;
-
-        T tmp = _places[position];
-        _places[position] = null;
-        return tmp;
+        else
+        {
+            T plane = _places.get(position);
+            _places.set(position, null);
+            return plane;
+        }
     }
 
     public T Get(int position)
     {
-        // TODO проверка позиции
         if (position < 0 || position >= Count()) return null;
-        return _places[position];
+        return _places.get(position);
     }
+
+    public void Set(int position, T usta) {
+        // Проверка позиции
+        // Проверка свободных мест в списке
+        if (position < 0 || position >= maxCount || Count() == maxCount) {
+            return;
+        }
+        // Вставка в список по позиции
+        _places.set(position, usta);
+    }
+
+    public ArrayList<T> GetEnumerator() {
+        return _places;
+    }
+
 }

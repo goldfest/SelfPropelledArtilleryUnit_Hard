@@ -142,4 +142,14 @@ public class FormUstaBat {
         pictureBox.paint(g);
         _drawingUsta.DrawTransport((Graphics2D) g);
     }
+
+    public void ChangeUsta(DrawingUsta newUsta){
+        try {
+        _drawingUsta = newUsta;
+        _drawingUsta.SetPosition(20, 20);
+        Draw();
+        } catch (Exception e){
+            throw new RuntimeException();
+        }
+    }
 }
